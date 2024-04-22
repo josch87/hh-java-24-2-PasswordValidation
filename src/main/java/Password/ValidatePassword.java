@@ -1,3 +1,5 @@
+package Password;
+
 import java.util.Arrays;
 
 public class ValidatePassword {
