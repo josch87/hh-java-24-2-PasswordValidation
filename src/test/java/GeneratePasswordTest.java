@@ -9,7 +9,7 @@ public class GeneratePasswordTest {
         int passwordLength = 7;
 
         // THEN
-        Assertions.assertThrows(IllegalArgumentException.class, () -> GeneratePassword.getNewPassword((passwordLength)));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> GeneratePassword.getNewPassword((passwordLength)), "getNewPassword() should throw exception because password length must be at least 8 characters");
     }
     
     @Test

@@ -17,8 +17,7 @@ public class ValidatePassword {
     };
 
     public static boolean isPasswordLongEnough(String password) {
-        int length = password.length();
-        return length >= 8;
+        return password.length() >= 8;
     }
 
     public static boolean hasPasswordDigits(String password) {
