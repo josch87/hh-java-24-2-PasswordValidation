@@ -22,8 +22,8 @@ public class ValidatePassword {
     }
 
     public static boolean hasPasswordDigits(String password) {
-        for (int i = 0; i < password.length(); i++) {
-            if (Character.isDigit(password.charAt(i))) {
+        for (char character : password.toCharArray()) {
+            if (Character.isDigit(character)) {
                 return true;
             }
         }
