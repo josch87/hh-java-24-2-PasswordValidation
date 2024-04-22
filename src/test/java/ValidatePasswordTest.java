@@ -98,5 +98,51 @@ public class ValidatePasswordTest {
         Assertions.assertTrue(actual);
     }
 
+    @Test
+    public void hasPasswordMixedCase_WhenPasswordHasNoUppercaseChar_ThenReturnFalse() {
+        // GIVEN
+        String password = "wegouz7wgeku2wzge34kwr0hweh";
 
+        // WHEN
+        boolean actual = ValidatePassword.hasPasswordMixedCase(password);
+
+        // THEN
+        Assertions.assertFalse(actual);
+    }
+
+    @Test
+    public void hasPasswordMixedCase_WhenPasswordHasNoLowercaseChar_ThenReturnFalse() {
+        // GIVEN
+        String password = "EZGKWUG8125125WGQIGQUWGI";
+
+        // WHEN
+        boolean actual = ValidatePassword.hasPasswordMixedCase(password);
+
+        // THEN
+        Assertions.assertFalse(actual);
+    }
+
+    @Test
+    public void hasPasswordMixedCase_WhenPasswordHasOnlyDigits_ThenReturnFalse() {
+        // GIVEN
+        String password = "72039213620836702682";
+
+        // WHEN
+        boolean actual = ValidatePassword.hasPasswordMixedCase(password);
+
+        // THEN
+        Assertions.assertFalse(actual);
+    }
+
+    @Test
+    public void hasPasswordMixedCase_WhenPasswordHasUpperAndLowerCaseChar_ThenReturnTrue() {
+        // GIVEN
+        String password = "7203W9213620w836702682";
+
+        // WHEN
+        boolean actual = ValidatePassword.hasPasswordMixedCase(password);
+
+        // THEN
+        Assertions.assertTrue(actual);
+    }
 }

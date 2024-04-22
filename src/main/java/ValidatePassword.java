@@ -14,5 +14,19 @@ public class ValidatePassword {
         return false;
     }
 
+    public static boolean hasPasswordMixedCase(String password){
+        boolean hasUppercase = false;
+        boolean hasLowercase = false;
 
+        for (char character : password.toCharArray()) {
+            if (Character.isUpperCase(character)) {
+                hasUppercase = true;
+            }
+            if (Character.isLowerCase(character)) {
+                hasLowercase = true;
+            }
+        }
+
+        return hasUppercase && hasLowercase;
+    }
 }
