@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class ValidatePassword {
 
-    private static final String[] passwordListTop100 = {
+    public static final String[] passwordListTop100 = {
             "123456", "password", "123456", "password", "12345678", "qwerty", "123456789", "12345", "1234", "111111",
             "1234567", "dragon", "123123", "baseball", "abc123", "football", "monkey", "letmein", "696969", "shadow",
             "master", "666666", "qwertyuiop", "123321", "mustang", "1234567890", "michael", "654321", "pussy",
