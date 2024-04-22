@@ -49,4 +49,15 @@ public class ValidatePassword {
     public static boolean isPasswordCommonlyUsed(String password) {
         return Arrays.asList(passwordListTop100).contains(password.toLowerCase());
     }
+
+    public static boolean hasPasswordSpecialCharacter(String password) {
+        String specialCharacters = "!@#$%^&*()-+";
+
+        for (char character : password.toCharArray()) {
+            if (specialCharacters.contains(String.valueOf(character))) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

@@ -181,4 +181,40 @@ public class ValidatePasswordTest {
         // THEN
         Assertions.assertFalse(actual);
     }
+
+    @Test
+    public void hasPasswordSpecialCharacters_WhenPasswordhasHastag_ThenReturnTrue() {
+        // GIVEN
+        String password = "a4ZzRB#EJyR2";
+
+        // WHEN
+        boolean actual = ValidatePassword.hasPasswordSpecialCharacter(password);
+
+        // THEN
+        Assertions.assertTrue(actual);
+    }
+
+    @Test
+    public void hasPasswordSpecialCharacters_WhenPasswordHasMultipleSpecialChars_ThenReturnTrue() {
+        // GIVEN
+        String password = "a4Z$zRBEJy&R2";
+
+        // WHEN
+        boolean actual = ValidatePassword.hasPasswordSpecialCharacter(password);
+
+        // THEN
+        Assertions.assertTrue(actual);
+    }
+
+    @Test
+    public void hasPasswordSpecialCharacters_WhenPasswordhasNoSpecialChar_ThenReturnFalse() {
+        // GIVEN
+        String password = "a4ZzRBEJyR2";
+
+        // WHEN
+        boolean actual = ValidatePassword.hasPasswordSpecialCharacter(password);
+
+        // THEN
+        Assertions.assertFalse(actual);
+    }
 }
