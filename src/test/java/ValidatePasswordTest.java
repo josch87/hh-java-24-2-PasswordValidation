@@ -61,4 +61,42 @@ public class ValidatePasswordTest {
         // THEN
         Assertions.assertTrue(actual);
     }
+
+    @Test
+    public void hasPasswordDigits_WhenPasswordHasNoDigit_ThenReturnFalse() {
+        // GIVEN
+        String password = "wegouzwgekuwzgekwrhweh";
+
+        // WHEN
+        boolean actual = ValidatePassword.hasPasswordDigits(password);
+
+        // THEN
+        Assertions.assertFalse(actual);
+    }
+
+    @Test
+    public void hasPasswordDigits_WhenPasswordHas0_ThenReturnTrue() {
+        // GIVEN
+        String password = "wegouzwgekuwzgekwr0hweh";
+
+        // WHEN
+        boolean actual = ValidatePassword.hasPasswordDigits(password);
+
+        // THEN
+        Assertions.assertTrue(actual);
+    }
+
+    @Test
+    public void hasPasswordDigits_WhenPasswordHasSeveralDigits_ThenReturnTrue() {
+        // GIVEN
+        String password = "wegouz7wgeku2wzge34kwr0hweh";
+
+        // WHEN
+        boolean actual = ValidatePassword.hasPasswordDigits(password);
+
+        // THEN
+        Assertions.assertTrue(actual);
+    }
+
+
 }
