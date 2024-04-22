@@ -145,4 +145,40 @@ public class ValidatePasswordTest {
         // THEN
         Assertions.assertTrue(actual);
     }
+
+    @Test
+    public void isPasswordCommonlyUsed_WhenPasswordIs123456_ThenReturnTrue() {
+        // GIVEN
+        String password = "123456";
+
+        // WHEN
+        boolean actual = ValidatePassword.isPasswordCommonlyUsed(password);
+
+        // THEN
+        Assertions.assertTrue(actual);
+    }
+
+    @Test
+    public void isPasswordCommonlyUsed_WhenPasswordIsminecRAft_ThenReturnTrue() {
+        // GIVEN
+        String password = "minecRAft";
+
+        // WHEN
+        boolean actual = ValidatePassword.isPasswordCommonlyUsed(password);
+
+        // THEN
+        Assertions.assertTrue(actual);
+    }
+
+    @Test
+    public void isPasswordCommonlyUsed_WhenPasswordIsVeryRandom_ThenReturnFalse() {
+        // GIVEN
+        String password = "a4ZzRB%BBoDb8@EJyR2#";
+
+        // WHEN
+        boolean actual = ValidatePassword.isPasswordCommonlyUsed(password);
+
+        // THEN
+        Assertions.assertFalse(actual);
+    }
 }
